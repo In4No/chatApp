@@ -106,6 +106,19 @@ Template.message.onCreated ->
 				for token in message.tokens
 					token.text = token.text.replace(/([^\$])(\$[^\$])/gm, '$1$$$2')
 					message.html = message.html.replace token.token, token.text
+			
+			if typeof message.starred != 'undefined'
+				console.log 'got starred message'
+				console.log message
+				Meteor.call 'starMessage', message, (error, result) ->
+					if error
+						return Errors.throw error.reason
+
+			if RocketChat.models.Users.isUserInRole message.u._id, 'admin'
+					message.pinned = true
+					Meteor.call 'pinMessage', message, (error, result) ->
+						if error
+							return Errors.throw error.reason
 
 			# console.log JSON.stringify message
 			msg.html = message.html.replace /\n/gm, '<br/>'

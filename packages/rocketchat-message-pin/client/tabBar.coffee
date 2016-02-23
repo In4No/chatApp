@@ -4,8 +4,8 @@ Meteor.startup ->
 			RocketChat.TabBar.addButton({
 				groups: ['channel', 'privategroup', 'directmessage'],
 				id: 'pinned-messages',
-				i18nTitle: 'Pinned_Messages',
-				icon: 'icon-pin',
+				i18nTitle: 'eCoaching Nuggets',
+				icon: 'icon-lightbulb',
 				template: 'pinnedMessages',
 				order: 10
 			})

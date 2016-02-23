@@ -28,6 +28,7 @@ Template.membersList.helpers
 
 					utcOffset = "(UTC #{utcOffset})"
 
+
 				users.push
 					username: username
 					status: onlineUsers[username]?.status

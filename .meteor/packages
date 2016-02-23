@@ -56,7 +56,7 @@ rocketchat:importer
 rocketchat:importer-hipchat
 rocketchat:importer-slack
 rocketchat:ldap
-rocketchat:livechat
+#rocketchat:livechat
 rocketchat:logger
 rocketchat:mailer
 rocketchat:markdown

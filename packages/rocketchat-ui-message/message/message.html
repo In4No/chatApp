@@ -1,5 +1,6 @@
 <template name="message">
-	<li id="{{_id}}" class="message {{isSequential}} {{system}} {{t}} {{own}} {{isTemp}} {{chatops}}" data-username="{{u.username}}" data-groupable="{{isGroupable}}" data-date="{{date}}" data-timestamp="{{timestamp}}">
+	<li id="{{_id}}" class="message {{isSequential}} {{system}} {{t}} {{own}} {{isTemp}} {{chatops}} clearfix" data-username="{{u.username}}" data-groupable="{{isGroupable}}" data-date="{{date}}" data-timestamp="{{timestamp}}">
+		<div class ="message-container">
 		{{#if avatar}}
 			<a class="thumb user-card-message" href="#" data-username="{{u.username}}" tabindex="1">
 				<div class="avatar">
@@ -61,5 +62,6 @@
 				{{> messageAttachment}}
 			{{/each}}
 		</div>
+	</div>
 	</li>
 </template>

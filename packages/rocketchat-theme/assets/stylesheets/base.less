@@ -2545,16 +2545,85 @@ a.github-fork {
 }
 
 .message {
-	padding: 8px 20px 4px 70px;
-	position: relative;
+	padding: 8px 20px 4px 20px;
+	padding-left: 60px;
 	line-height: 20px;
 	min-height: 40px;
+
+	.message-container{
+		min-width: 40%;
+		max-width: 60%;
+		margin: 10px 0;
+		background-color: #eaeaea;
+		position: relative;
+		float: left;
+		padding: 20px;
+		border-radius: 3px;
+
+		&:hover {
+		background-color: @message-hover-background-color;
+		}
+		.thumb {
+			position: absolute;
+			left: -50px;
+			display: block;
+			width: 40px;
+			height: 40px;
+			top: 0;
+			&.thumb-small {
+				position: initial;
+				width: 20px;
+				height: 20px;
+				display: inline-block;
+				vertical-align: bottom;
+				.avatar {
+					border-radius: 50%;
+				}
+			}
+		}
+	}
 
 	&.highlight {
 		-webkit-animation: highlight 3s;
 		-moz-animation: highlight 3s;
 		-o-animation: highlight 3s;
 		animation: highlight 3s;
+	}
+
+	&.own {
+		padding-right : 60px;
+		.message-container{
+			float: right;
+			background-color: #b0e8e2;
+
+			.thumb {
+				position: absolute;
+				left: calc(~'100% + 10px');
+				display: block;
+				width: 40px;
+				height: 40px;
+				&.thumb-small {
+					position: initial;
+					width: 20px;
+					height: 20px;
+					display: inline-block;
+					vertical-align: bottom;
+					.avatar {
+						border-radius: 50%;
+					}
+				}
+			}
+			.user.user-card-message{
+				position: absolute;
+				top:-20px;
+				left: calc(~'100% - 30px');
+			}
+			}
+	}
+	.user.user-card-message{
+		position: absolute;
+		top:-20px;
+		left:0;
 	}
 
 	.body, .user.user-card-message, .time {
@@ -2573,9 +2642,7 @@ a.github-fork {
 	&:nth-child(1) {
 		margin-top: 0;
 	}
-	&:hover {
-		background-color: @message-hover-background-color;
-	}
+	
 	&.new-day {
 		margin-top: 60px;
 	}
@@ -2691,23 +2758,7 @@ a.github-fork {
 		&:hover {
 		}
 	}
-	.thumb {
-		position: absolute;
-		left: 20px;
-		display: block;
-		width: 40px;
-		height: 40px;
-		&.thumb-small {
-			position: initial;
-			width: 20px;
-			height: 20px;
-			display: inline-block;
-			vertical-align: bottom;
-			.avatar {
-				border-radius: 50%;
-			}
-		}
-	}
+	
 	.info {
 		font-size: 12px;
 		.edited {
